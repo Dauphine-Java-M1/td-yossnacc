@@ -35,4 +35,22 @@ public class PrimeCollectionTest
     {
         assertTrue( true );
     }
+    
+    public void test0IsPrime() {
+    	if(!PrimeCollection.isPrime(0)) {
+    		assertTrue( true );
+    	}
+    }
+    
+    public void testTwoIsPrime() {
+    	if(!PrimeCollection.isPrime(2)) {
+    		assertTrue( true );
+    	}
+    }
+    
+    public void test9IsNotPrime() {
+    	if(PrimeCollection.isPrime(9)) {
+    		assertTrue( true );
+    	}
+    }
 }

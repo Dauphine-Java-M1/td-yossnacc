@@ -33,7 +33,7 @@ public class PrimeCollection
     	}
     }
     
-    private static boolean isPrime(int p) {
+    public static boolean isPrime(int p) {
     	
     	int racine = (int) Math.sqrt(p);
     	
