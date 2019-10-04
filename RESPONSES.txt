@@ -9,3 +9,4 @@ Exo2:
 Question 3 : gitk represente les deux dépots synchronisé par le texte "master-remote/origin/master"
 Question 5 : git me bloque car il y'a un conflit sur le fichier RESPONSES.txt et il me demande de choisir entre les modification apporté par le commit d'avant et celui de maintenant 
 
+Petite modif
