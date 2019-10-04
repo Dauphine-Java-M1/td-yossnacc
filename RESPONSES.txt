@@ -1,0 +1,11 @@
+yossef Naccache
+
+TD2 
+Exo1:
+Question 5 : la différence qui à été apporté au fichier par rapport a ce qui a deja été commit
+Question 8 : le hash est b84a740a79021ef627f84119ce96017dfda83110
+
+Exo2:
+Question 3 : gitk represente les deux dépots synchronisé par le texte "master-remote/origin/master"
+Question 5 : git me bloque car il y'a un conflit sur le fichier RESPONSES.txt et il me demande de choisir entre les modification apporté par le commit d'avant et celui de maintenant 
+
