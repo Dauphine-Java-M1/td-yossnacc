@@ -19,6 +19,10 @@ car il y'a un conflit sur le fichier RESPONSES.txt et il me demande de choisir e
 Question 6 : il contient les modifications apporté dans RESPONSES.txt du dépot cloné
 Question 7 : ça uarait crée un conflit et il aurait fallu choisir entre les modifications apporté dans la même ligne afin d'en garder qu'une
 
+EXO3:
+Question 2 : On observe une petite fenetre qui s'ouvres sur le coté et qui affiche le résultat des tests
+	Si on change true par false on un une faillure dans les tests
+	
 
 
 
