@@ -2,4 +2,22 @@ Yossef Naccache (en binome avec Gabriel Serraf)
 
 TD01
 Exo1:
+Question 1 : cela fonctionne car la classe comporte un constructeur par default
+
+Question 2 : Une erreur se déclenche car la classe TestPoint n'a pas accèes aux attributs de la classe Point. 
+			Il faut écrire les Getters et les Setters
+
+Question 3 : Par sécurité c'est le principe de l'encapsulation. 
+
+Question 4 : Un acceseur permet d'acceder à un attribur privée de la classe. 
+			On doit le faire ici si on veut acceder aux attributs de la classe Point de la classe TestPoint
+
+Question 5 : Le constructeur par default est remplacer par celui qui vient d'être écrit. 
+			Du coup il faut obligatoirement lui donner des paramatres ou écrire un 2ème constructeur sans params
+
+Question 7 : Il faut crée une variable static.
+
+Question 8 : En fonction du nombre d'attributs passer en parametres
+
+Question 1 :
 Question 1 :

@@ -28,7 +28,7 @@
 		<configuration>
 			<archive>
 				<manifest>
-				<mainClass>fr.dauphine.ja.naccacheyossef.shapes.App</mainClass>
+				<mainClass>fr.dauphine.ja.naccacheyossef.shapes.Point</mainClass>
 				<addClasspath>true</addClasspath>
 				<classpathPrefix>lib</classpathPrefix>
 				</manifest>

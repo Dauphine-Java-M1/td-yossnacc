@@ -4,10 +4,15 @@ package fr.dauphine.ja.naccacheyossef.shapes;
  * Hello world!
  *
  */
-public class App 
+public class TestPoint 
 {
+	private int x;
+	private int y;
+	
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
+    	Point p = new Point(7,8);
+    	System.out.println(p.getX()+" "+p.getY());
+
     }
 }
