@@ -19,5 +19,31 @@ Question 7 : Il faut crée une variable static.
 
 Question 8 : En fonction du nombre d'attributs passer en parametres
 
-Question 1 :
-Question 1 :
+
+Exo2:
+Question 1 : Le code affiche : true, false
+			Car p1 et p2 ont la même référence (par default pour les objects) et non p3
+			
+Question 3 : p3 n'est pas dans la liste donc la valeur retourné est -1
+			
+
+
+Exo3:
+Question 5 : Java lève une NullPointerException à l'exécution car on essaie d'exécuter null.equals(o)
+
+EXO4:
+Question 1 : Les  différentes signatures et possibilit´es pour cette m´ethode sont :
+			public void translate(int dx, int dy)
+			public void translate(Point p)
+
+Question 5 : La méthode translate va modifier le centre des deux cercles.
+			Afin d'éviter cette situation, il est possible de faire une copie du point (nouvel objet avac les même attributs) dans le constructeur de Circle.
+
+Question 9 : Il est préférable d'en faire une méthode statique puisqu'on ne considère plus un cercle en particulier.
+			Faire circle.contains(point, circle1, circle2) n'a pas de sens.
+			
+EXO5:
+Question 1 : Oui ! Car un anneau peut être vu comme un type de cercle.
+
+Question 4 : Cette méthode affiche le hash de l'objet si on n'a pas défini de méthode toString()
+			
