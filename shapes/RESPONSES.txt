@@ -46,4 +46,22 @@ EXO5:
 Question 1 : Oui ! Car un anneau peut être vu comme un type de cercle.
 
 Question 4 : Cette méthode affiche le hash de l'objet si on n'a pas défini de méthode toString()
+
+
+
+
+
+
+
+
+TD2
+Exercide 1:
+5) Elle est appellé à chaque redimentionnement de la fenetre
+
+6) Les composantsawtsont considérés comme lourds (on dit aussiHeavyWeight) car ils sont fortement liés au système d'exploitation, c'est ce dernier qui les gère. Les composantsswing, eux, sont comme dessinés dans un conteneur, ils sont dit légers (on dit aussiLightWeight). ils n'ont pas le même rendu à l'affichage, car ce n'est plus le système d'exploitation qui les gère.
+			
+			
+			
+			
+			
 			
