@@ -1,4 +1,4 @@
-package fr.dauphine.ja.naccacheyossef.shapes;
+package fr.dauphine.ja.naccacheyossef.model;
 
 /**
  * Hello world!
