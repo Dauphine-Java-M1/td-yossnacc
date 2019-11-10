@@ -1,0 +1,67 @@
+Yossef Naccache (en binome avec Gabriel Serraf)
+
+TD01
+Exo1:
+Question 1 : cela fonctionne car la classe comporte un constructeur par default
+
+Question 2 : Une erreur se déclenche car la classe TestPoint n'a pas accèes aux attributs de la classe Point. 
+			Il faut écrire les Getters et les Setters
+
+Question 3 : Par sécurité c'est le principe de l'encapsulation. 
+
+Question 4 : Un acceseur permet d'acceder à un attribur privée de la classe. 
+			On doit le faire ici si on veut acceder aux attributs de la classe Point de la classe TestPoint
+
+Question 5 : Le constructeur par default est remplacer par celui qui vient d'être écrit. 
+			Du coup il faut obligatoirement lui donner des paramatres ou écrire un 2ème constructeur sans params
+
+Question 7 : Il faut crée une variable static.
+
+Question 8 : En fonction du nombre d'attributs passer en parametres
+
+
+Exo2:
+Question 1 : Le code affiche : true, false
+			Car p1 et p2 ont la même référence (par default pour les objects) et non p3
+			
+Question 3 : p3 n'est pas dans la liste donc la valeur retourné est -1
+			
+
+
+Exo3:
+Question 5 : Java lève une NullPointerException à l'exécution car on essaie d'exécuter null.equals(o)
+
+EXO4:
+Question 1 : Les  différentes signatures et possibilit´es pour cette m´ethode sont :
+			public void translate(int dx, int dy)
+			public void translate(Point p)
+
+Question 5 : La méthode translate va modifier le centre des deux cercles.
+			Afin d'éviter cette situation, il est possible de faire une copie du point (nouvel objet avac les même attributs) dans le constructeur de Circle.
+
+Question 9 : Il est préférable d'en faire une méthode statique puisqu'on ne considère plus un cercle en particulier.
+			Faire circle.contains(point, circle1, circle2) n'a pas de sens.
+			
+EXO5:
+Question 1 : Oui ! Car un anneau peut être vu comme un type de cercle.
+
+Question 4 : Cette méthode affiche le hash de l'objet si on n'a pas défini de méthode toString()
+
+
+
+
+
+
+
+
+TD2
+Exercide 1:
+5) Elle est appellé à chaque redimentionnement de la fenetre
+
+6) Les composantsawtsont considérés comme lourds (on dit aussiHeavyWeight) car ils sont fortement liés au système d'exploitation, c'est ce dernier qui les gère. Les composantsswing, eux, sont comme dessinés dans un conteneur, ils sont dit légers (on dit aussiLightWeight). ils n'ont pas le même rendu à l'affichage, car ce n'est plus le système d'exploitation qui les gère.
+			
+			
+			
+			
+			
+			
