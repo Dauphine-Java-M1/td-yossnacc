@@ -9,4 +9,8 @@ Q4) Cette classe  est utilisée pour implémenter une collection non modifiable.
 	On implémente les méthodes get () et size(). 
 	Ce sont les méthodes qui permettent d'avoir une liste non mutable.
 			
-			
+Exo2:
+
+Q3) Le temps d'éxécution est beaucoup plus longue pour une linkedList<Integer> que pour une ArrayList <Integer>
+	La complexité en espace pour une  ArrayList est moins elévé pour un parcours de boucle.
+	En utilisant randomAccess et listIterator, l'écart sur le temps d'éxécution est fortement réduit		
