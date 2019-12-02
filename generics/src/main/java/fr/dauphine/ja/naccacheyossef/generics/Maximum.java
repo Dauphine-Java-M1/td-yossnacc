@@ -1,5 +1,8 @@
 package fr.dauphine.ja.naccacheyossef.generics;
 
+import java.util.Arrays;
+import java.util.List;
+
 /**
  * Hello world!
  *
@@ -7,7 +10,7 @@ package fr.dauphine.ja.naccacheyossef.generics;
 public class Maximum 
 {
 	
-	/*private static int myMax(int... tab) {
+	/*public static int myMax(int... tab) {
         if (tab == null || tab.length == 0) {
             throw new IllegalArgumentException("Empty array or array is null");
         }
@@ -34,7 +37,18 @@ public class Maximum
         }
         return Max;
     }
+	
+	public static <T> void print(List<T> list) {
+		for(T t : list)
+		System.out.println(t);
+	}
 
+	public static void taille(List<? extends CharSequence> list) {
+		for(CharSequence c : list){
+            System.out.println(c.length());
+        }
+	}
+	
     public static void main(String[] args)
     {
     	System.out.println(myMax(42,1664)); //1664
@@ -42,7 +56,12 @@ public class Maximum
     	//System.out.println(myMax()); //ko
     	
     	System.out.println(myMax(8.6,16.64)); //16.64
-    	System.out.println(myMax("baa", "aba")); //baa
+    	System.out.println(myMax("baa", "aba")); //baa car baa est plus grand que aba
     	//System.out.println(myMax(8.6, "aba")); // ko !
+    	
+    	List<String> list = Arrays.asList("foo", "toto");
+    	//List<Integer> list = Arrays.asList(2014,86,13);
+    	print(list);
+    	taille(list);
     }
 }
