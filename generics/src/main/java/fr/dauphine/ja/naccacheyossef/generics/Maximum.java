@@ -1,5 +1,6 @@
 package fr.dauphine.ja.naccacheyossef.generics;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -49,6 +50,22 @@ public class Maximum
         }
 	}
 	
+	public static <T extends CharSequence> List<Integer> listLength(List<T> list) {
+		ArrayList length = new ArrayList();
+		for(T t : list) {
+			length.add(t.length());
+		}
+		return length;
+	}
+	
+	public static List<Integer> listLength2(List<? extends CharSequence> list) {
+        ArrayList<Integer> length=new ArrayList();
+        for(CharSequence s : list) {
+            length.add(s.length());
+        }
+        return length;
+    }
+	
     public static void main(String[] args)
     {
     	System.out.println(myMax(42,1664)); //1664
@@ -63,5 +80,10 @@ public class Maximum
     	//List<Integer> list = Arrays.asList(2014,86,13);
     	print(list);
     	taille(list);
+    	
+    	
+    	List l=Arrays.asList("colonel", "reyel");
+    	System.out.println(listLength(l));
+    	System.out.println(listLength2(l));
     }
 }
