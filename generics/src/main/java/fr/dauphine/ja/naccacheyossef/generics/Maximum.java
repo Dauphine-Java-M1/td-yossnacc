@@ -2,6 +2,7 @@ package fr.dauphine.ja.naccacheyossef.generics;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -66,6 +67,27 @@ public class Maximum
         return length;
     }
 	
+	 private static <T, T1 extends T, T2 extends T> List<T> fusion(List<T1> l1, List<T2> l2){
+		 	if (l1.size() != l2.size()) {
+	            throw new IllegalArgumentException("Il faut les deux listes de la meme taille !");
+	        }
+		 	if (l1.size() == 0 || l2.size()==0) {
+		 		throw new IllegalArgumentException("La liste ne peut pas être vide !");
+		 	}
+		 
+	        List<T> list = new ArrayList<T>();
+	        
+	        Iterator<T1> it1 = l1.iterator();
+	        Iterator<T2> it2 = l2.iterator();
+	        
+	        while(it1.hasNext() && it2.hasNext()){
+	            list.add(it1.next());
+	            list.add(it2.next());
+	        }
+	        
+	        return list;
+	    }
+	
     public static void main(String[] args)
     {
     	System.out.println(myMax(42,1664)); //1664
@@ -85,5 +107,21 @@ public class Maximum
     	List l=Arrays.asList("colonel", "reyel");
     	System.out.println(listLength(l));
     	System.out.println(listLength2(l));
+    	
+    	
+    	List<String> l1= Arrays.asList("C", "rc");
+    	List<StringBuilder> l2= Arrays.asList(new StringBuilder("a ma"), new StringBuilder("he!"));
+    	List<? extends CharSequence> r1=fusion(l1,l2);
+    	System.out.println(r1);
+    	List<?> r2=fusion(l1,l2);
+    	System.out.println(r2);
+    	List<Integer> l3 = Arrays.asList(1,2);
+    	List<Integer> l4 = Arrays.asList(10,20);
+    	List<Integer> r3 = fusion(l3,l4);
+    	System.out.println(r3);
+    	List<?> r4 = fusion(l1,l3);
+    	System.out.println(r4);
+
+    	
     }
 }
