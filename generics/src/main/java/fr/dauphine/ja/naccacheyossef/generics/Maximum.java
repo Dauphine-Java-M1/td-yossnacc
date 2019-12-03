@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Random;
 
 /**
  * Hello world!
@@ -68,25 +69,50 @@ public class Maximum
     }
 	
 	 private static <T, T1 extends T, T2 extends T> List<T> fusion(List<T1> l1, List<T2> l2){
-		 	if (l1.size() != l2.size()) {
-	            throw new IllegalArgumentException("Il faut les deux listes de la meme taille !");
-	        }
-		 	if (l1.size() == 0 || l2.size()==0) {
-		 		throw new IllegalArgumentException("La liste ne peut pas être vide !");
-		 	}
-		 
-	        List<T> list = new ArrayList<T>();
-	        
-	        Iterator<T1> it1 = l1.iterator();
-	        Iterator<T2> it2 = l2.iterator();
-	        
-	        while(it1.hasNext() && it2.hasNext()){
-	            list.add(it1.next());
-	            list.add(it2.next());
-	        }
-	        
-	        return list;
-	    }
+	 	if (l1.size() != l2.size()) {
+            throw new IllegalArgumentException("Il faut les deux listes de la meme taille !");
+        }
+	 	if (l1.size() == 0 || l2.size()==0) {
+	 		throw new IllegalArgumentException("La liste ne peut pas être vide !");
+	 	}
+	 
+        List<T> list = new ArrayList<T>();
+        
+        Iterator<T1> it1 = l1.iterator();
+        Iterator<T2> it2 = l2.iterator();
+        
+        while(it1.hasNext() && it2.hasNext()){
+            list.add(it1.next());
+            list.add(it2.next());
+        }
+        
+        return list;
+    }
+ 
+ 	public <T> void swap(List<T> list, int i, int j){
+        if(i >= list.size() || j >= list.size() || i < 0 || j < 0){
+            throw new IndexOutOfBoundsException("i or j is out of bounds");
+        }
+        
+        T t1 = list.get(i);
+        T t2 = list.get(j);
+        
+        list.set(i, t2);
+        list.set(j, t1);
+        
+    }
+    
+    
+    public <T> void shuffle(List<T> list){
+        
+        Random random = new Random();
+        
+        for(int i = 1; i < list.size(); i++){
+            int j = random.nextInt(i + 1);
+            swap(list, i , j);
+        }
+       
+    }
 	
     public static void main(String[] args)
     {
