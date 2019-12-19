@@ -3,6 +3,7 @@ package fr.dauphine.ja.naccacheyossef.threads;
 import java.time.Duration;
 import java.time.Instant;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class MySafeList extends ArrayList<Double> {
 	
@@ -57,17 +58,39 @@ public class MySafeList extends ArrayList<Double> {
 		return (myList.size() == n * m) ? true : false;
 	}
 	
+	public static double scalar(MySafeList v1, MySafeList v2) {
+		if(v1.size() != v2.size()) throw new IllegalArgumentException("Les listes doivent être de la même taille");
+		
+		double sum = 0.0;
+		for (int i = 0; i < v1.size(); i++) {
+			sum += v1.get(i) * v2.get(i);
+		}
+		return sum;
+	}
+	
+	public static MySafeList generateList(int n) {
+		MySafeList myList = new MySafeList();
+		for (int i = 0; i < n; i++) {
+			myList.add(new Random().nextDouble());
+		}
+		return myList;
+	}
+	
 	public static void main(String[] args){
 		//long startTime = System.nanoTime();
 		Instant start = Instant.now();
 		
-		System.out.println(stressTest(10, 1000000));
+		System.out.println(stressTest(10, 10000));
 		
 		Instant end = Instant.now();
 		Duration durer = Duration.between(start, end);
 		
 		//System.out.println((System.nanoTime() - startTime)/1000000);
 		System.out.println(durer.getSeconds());
+		
+		MySafeList l1 = generateList(10);
+		MySafeList l2 = generateList(10);
+		System.out.println(scalar(l1,l2));
 		
 	}
 	
