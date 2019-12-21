@@ -76,8 +76,44 @@ public class MySafeList extends ArrayList<Double> {
 		return myList;
 	}
 	
+	public static double scalar2(MySafeList v1, MySafeList v2, int begin, int end) {
+		if(v1.size() != v2.size()) throw new IllegalArgumentException("Les listes doivent être de la même taille");
+		
+		double sum = 0.0;
+		for (int i = begin; i < end; i++) {
+			sum += v1.get(i) * v2.get(i);
+		}
+		return sum;
+	}
+	
+	public static double parallelScalar(MySafeList l1, MySafeList l2, int n) {
+		
+        ScalarThread[] threads = new ScalarThread[n];
+        int portionLength = l1.size() / n;
+        double result = 0.0;
+
+        for (int i = 0; i < n-1; i++) {
+            threads[i] = new ScalarThread(l1, l2, i * portionLength, (i + 1) * portionLength);
+            threads[i].start();
+        }
+        
+        threads[n - 1] = new ScalarThread(l1, l2, (n - 1) * portionLength, l1.size());
+        threads[n - 1].start();
+
+        try {
+            for (int i = 0; i < n; i++) {
+                threads[i].join();
+                result += threads[i].getResult();
+            }
+
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        return result;
+    }
+	
 	public static void main(String[] args){
-		//long startTime = System.nanoTime();
 		Instant start = Instant.now();
 		
 		System.out.println(stressTest(10, 10000));
@@ -85,12 +121,13 @@ public class MySafeList extends ArrayList<Double> {
 		Instant end = Instant.now();
 		Duration durer = Duration.between(start, end);
 		
-		//System.out.println((System.nanoTime() - startTime)/1000000);
 		System.out.println(durer.getSeconds());
 		
-		MySafeList l1 = generateList(10);
-		MySafeList l2 = generateList(10);
-		System.out.println(scalar(l1,l2));
+		MySafeList l1 = generateList(10000000);
+		MySafeList l2 = generateList(10000000);
+		long startTime = System.nanoTime();
+		System.out.println(parallelScalar(l1,l2,12));
+		System.out.println((System.nanoTime() - startTime)/1000000);
 		
 	}
 	
